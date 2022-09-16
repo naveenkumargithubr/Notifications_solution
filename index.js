@@ -1,53 +1,39 @@
 const Notification = (props) => {
-  const { className } = props;
+  const { className, iconUrl, message } = props;
+  const containerClassName = `notification-container ${className}`;
+
   return (
-    (<img className="logo" />),
-    (<p className="info"></p>),
-    (<h1 className="heading"></h1>)
+    <div className={containerClassName}>
+      <img className="icon" src={iconUrl} />
+      <p className="message">{message}</p>
+    </div>
   );
 };
 
 const element = (
-  <div className="bg-container">
-    <h1 className="heading">Notifications</h1>
-    <div className="Information">
-      <div className="first-info">
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/primary-icon-img.png"
-          className="logo"
-        />
-        <p className="info">Information Message</p>
-      </div>
-    </div>
-
-    <div className="Information success">
-      <div className="first-info">
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/success-icon-img.png"
-          className="logo"
-        />
-        <p className="info">Success Message</p>
-      </div>
-    </div>
-
-    <div className="Information warning">
-      <div className="first-info">
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/warning-icon-img.png"
-          className="logo"
-        />
-        <p className="info">Warning Message</p>
-      </div>
-    </div>
-
-    <div className="Information Error">
-      <div className="first-info">
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/danger-icon-img.png"
-          className="logo"
-        />
-        <p className="info">Error Message</p>
-      </div>
+  <div className="notifications-app-container">
+    <h1 className="title">Notifications</h1>
+    <div className="notifications-list-container">
+      <Notification
+        className="primary-bg-color"
+        iconUrl="https://assets.ccbp.in/frontend/react-js/primary-icon-img.png"
+        message="Information Message"
+      />
+      <Notification
+        className="success-bg-color"
+        iconUrl="https://assets.ccbp.in/frontend/react-js/success-icon-img.png"
+        message="Success Message"
+      />
+      <Notification
+        className="warning-bg-color"
+        iconUrl="https://assets.ccbp.in/frontend/react-js/warning-icon-img.png"
+        message="Warning Message"
+      />
+      <Notification
+        className="danger-bg-color"
+        iconUrl="https://assets.ccbp.in/frontend/react-js/danger-icon-img.png"
+        message="Error Message"
+      />
     </div>
   </div>
 );
